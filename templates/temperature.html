@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block head %}
+  {{ super() }}
+  <link rel="stylesheet" href="{{ url_for('static', filename='extended_beauty.css') }}" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    iframe {
+      width: 100%;
+      height: 80vh; /* Ajusta el porcentaje de altura que desees */
+      border: none; /* Eliminar borde */
+    }
+  </style>
+{% endblock %}
+
+
+{% block content %}
+  <div class="container">
+    <!-- Incluir el gráfico de Plotly usando un iframe -->
+    <iframe src="{{ url_for('static', filename='visualizations/temp_hour.html') }}" frameborder="0"></iframe>
+  </div>
+{% endblock %}
