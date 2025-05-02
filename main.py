@@ -6,6 +6,10 @@ main=Blueprint('main',__name__)
 def index():
     return render_template('main_interface.html')
 # Temperatura
+@main.route("/summ")
+def summ():
+    return render_template('summary.html')
+# Temperatura
 @main.route("/temp")
 def temp():
     return render_template('temperature.html')

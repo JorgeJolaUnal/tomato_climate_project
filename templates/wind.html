@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block head %}
+  {{ super() }}
+  <link rel="stylesheet" href="{{ url_for('static', filename='extended_beauty.css') }}" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    .grid-container {
+      display: grid;
+      grid-template-columns: 1fr;
+      justify-items: center;
+      padding: 40px;
+    }
+
+    .panel {
+      background-color: #1e1e1e;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      padding: 40px;
+      max-width: 600px;
+      text-align: center;
+      border-left: 6px solid #8B4513; /* Café oscuro */
+    }
+
+    .panel h2 {
+      color: #fff;
+      margin-bottom: 10px;
+    }
+
+    .panel p {
+      color: #ccc;
+      font-size: 18px;
+    }
+
+    body {
+      background-color: #000;
+      color: #fff;
+    }
+  </style>
+{% endblock %}
+
+{% block content %}
+  <div class="grid-container">
+    <div class="panel">
+      <h2>⚠️ Sin visualizaciones disponibles</h2>
+      <p>No hay gráficos para las variables de viento en este momento.</p>
+    </div>
+  </div>
+{% endblock %}
