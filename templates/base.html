@@ -41,9 +41,27 @@
     ></script>
 
     <style>
+      /* Asegura que el título se ajuste bien en móviles y pantallas grandes */
       .navbar-brand {
         color: #000 !important;
         font-weight: bold;
+        font-size: 1.5rem; /* Ajusta el tamaño de la fuente */
+        text-align: center;
+        width: 100%;
+        padding: 10px 0;
+      }
+
+      /* Añadir márgenes y padding para asegurar una buena visualización en móviles */
+      .navbar {
+        padding: 10px 0;
+      }
+      
+      /* Para que no se corte el texto en pantallas pequeñas */
+      @media (max-width: 576px) {
+        .navbar-brand {
+          font-size: 1.2rem;
+          padding: 10px;
+        }
       }
     </style>
     {% endblock %}
