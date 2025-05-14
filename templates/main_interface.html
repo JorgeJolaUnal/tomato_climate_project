@@ -10,7 +10,6 @@
       padding: 0;
       font-family: Arial, sans-serif;
       background-color: #000;
-      height: 20vh;
     }
 
     .container {
@@ -19,31 +18,86 @@
       align-items: center;
       justify-content: flex-start;
       height: 93.3vh;
-      padding-top: 0px; /* espacio debajo del navbar */
+      padding-top: 0;
       box-sizing: border-box;
     }
 
     .image-container {
       flex: 1;
-      width: 110%;
-      height: calc(70vh); /* altura total menos navbar */
-      overflow: hidden; /* por si la imagen es muy grande */
+      width: 132%;
+      height: 160%;
+      position: relative;
+      overflow: hidden;
     }
 
     .image-container img {
       width: 100%;
       height: 100%;
-      object-fit: cover; /* hace que la imagen se adapte y recorte si es necesario */
-      border-radius: 0; /* sin esquinas redondeadas si quieres que llene todo */
+      object-fit: cover;
     }
 
+    .button-grid {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(3, auto);
+      gap: 20px;
+      width: 60%;
+      max-width: 600px;
+      padding: 10px;
+      align-items: center;
+      justify-items: center;
+    }
+
+    .button-grid a {
+      text-decoration: none;
+      padding: 20px 30px;
+      background-color: rgba(255, 255, 255, 0.9);
+      color: #000;
+      font-size: 18px;
+      font-weight: bold;
+      border-radius: 10px;
+      text-align: center;
+      width: 100%;
+      max-width: 250px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      transition: background-color 0.3s ease;
+    }
+
+    .button-grid a:hover {
+      background-color: #fff;
+    }
+
+    /* Responsive design for tablets and smaller screens */
+    @media (max-width: 768px) {
+      .button-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(6, auto);
+        width: 80%;
+      }
+
+      .button-grid a {
+        font-size: 16px;
+        padding: 15px 20px;
+      }
+    }
   </style>
 {% endblock %}
 
 {% block content %}
   <div class="container">
     <div class="image-container">
-      <img src="{{ url_for('static', filename='images/image1.png') }}" alt="Descriptive Image">
+      <img src="{{ url_for('static', filename='images/image1.png') }}" alt="Imagen de fondo">
+      <div class="button-grid">
+        <a href="{{ url_for('main.summ') }}">Resumen</a>
+        <a href="{{ url_for('main.wind') }}">Viento</a>
+        <a href="{{ url_for('main.hum') }}">Humedad</a>
+        <a href="{{ url_for('main.temp') }}">Temperatura</a>
+        <a href="{{ url_for('main.rad') }}">Radiación</a>
+      </div>
     </div>
   </div>
 {% endblock %}

@@ -13,7 +13,6 @@
       href="https://fonts.googleapis.com/css2?family=Arvo&display=swap"
       rel="stylesheet"
     />
-
     <link
       rel="stylesheet"
       href="{{ url_for('static', filename= 'beauty.css') }}"
@@ -30,89 +29,33 @@
       integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
       crossorigin="anonymous"
     ></script>
-
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
       integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
       crossorigin="anonymous"
     ></script>
-
     <script
       src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
       integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
       crossorigin="anonymous"
     ></script>
+
+    <style>
+      .navbar-brand {
+        color: #000 !important;
+        font-weight: bold;
+      }
+    </style>
     {% endblock %}
   </head>
 
   <body>
     <nav class="navbar navbar-dark" style="background-color: #7ae719;">
-      <a class="navbar-brand" href="{{ url_for('main.index') }}"
-        >Visor de variables - Proyecto de tomate en la Facultad de Ciencias Agrarias UNAL</a
-      >
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <div class="label-container">
-            <li class="nav-item active">
-              <a
-                href="{{ url_for('main.summ') }}"
-                class="btn btn-outline-secondary"
-                role="button"
-                style="margin-left: 10px;"
-                >Resumen Climatologico</a
-              >
-            </li>
-
-            <li class="nav-item active">
-              <a
-                href="{{ url_for('main.temp') }}"
-                class="btn btn-outline-secondary"
-                role="button"
-                style="margin-left: 100px;"
-                >Variables Temperatura </a
-              >
-            </li>
-            <li class="nav-item active">
-              <a
-                href="{{ url_for('main.rad') }}"
-                class="btn btn-outline-secondary"
-                role="button"
-                style="margin-left: 100px;"
-                >Variables Radiación </a
-              >
-            </li>
-            <li class="nav-item active">
-              <a
-                href="{{ url_for('main.hum') }}"
-                class="btn btn-outline-secondary"
-                role="button"
-                style="margin-left: 100px;"
-                >Variables Humedad </a
-              >
-            </li>
-            <li class="nav-item active">
-              <a
-                href="{{ url_for('main.wind') }}"
-                class="btn btn-outline-secondary"
-                role="button"
-                style="margin-left: 100px;"
-                >Variables Viento </a
-              >
-            </li>
-      </div>
+      <span class="navbar-brand mx-auto">
+        Visor de variables - Proyecto de tomate en la Facultad de Ciencias Agrarias UNAL
+      </span>
     </nav>
-    {% block content %} {% endblock %}
+
+    {% block content %}{% endblock %}
   </body>
 </html>
