@@ -46,28 +46,11 @@
 {% endblock %}
 
 {% block content %}
-  <div class="dropdown">
-    <label for="tempSelector">Select temperature type:</label>
-    <select id="tempSelector">
-      <option value="temp_day.html">All Temperatures</option>
-      <option value="temp_daytime.html">Day Temperatures</option>
-      <option value="temp_nighttime.html">Night Temperatures</option>
-    </select>
-  </div>
 
   <div class="grid-container">
     <div class="panel">
-      <iframe id="tempFrame" src="{{ url_for('static', filename='visualizations/temp_day.html') }}"></iframe>
+      <iframe id="tempFrame" src="{{ url_for('static', filename='visualizations/temp_soil.html') }}"></iframe>
     </div>
-    <div class="panel">
-      <iframe src="{{ url_for('static', filename='visualizations/gdd_cum.html') }}"></iframe>
-    </div>
-  </div>
+  </div>  
 
-  <script>
-    $('#tempSelector').on('change', function () {
-      var selectedFile = $(this).val();
-      $('#tempFrame').attr('src', "{{ url_for('static', filename='visualizations/') }}" + selectedFile);
-    });
-  </script>
 {% endblock %}
